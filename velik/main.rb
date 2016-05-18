@@ -2,7 +2,7 @@ STDOUT.sync = true
 
 require "velik-slack"
 
-require_relative "../awsstatus/2.rb"
+require_relative "../../../awsstatus/2.rb" unless ENV["LOGNAME"] == "nakilon"
 
 SLACK_CLIENT.on :message do |data|
   AWSStatus::touch
