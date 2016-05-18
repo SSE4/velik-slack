@@ -14,11 +14,11 @@ chat = lambda do
   require_relative "wordize"
   require "digest"
   require "set"
-  hash = Hash[ File.read("array.txt").scan(/(\d+) (.+)/).map do |i, s|
+  hash = Hash[ File.read("array.txt.lfs").scan(/(\d+) (.+)/).map do |i, s|
     [i.to_i, s.split.map(&:to_i).each_slice(2)]
   end ]
-  good = Set.new File.read("good.txt").split
-  base = File.open "text.txt"
+  good = Set.new File.read("good.txt.lfs").split
+  base = File.open "text.txt.lfs"
   lambda do |data|
     h = wordize(data["text"]).flat_map do |word|
       next unless good.include? word
