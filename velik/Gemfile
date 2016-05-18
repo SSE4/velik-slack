@@ -1,0 +1,9 @@
+source "https://rubygems.org"
+
+# gem "slack-ruby-client", "=0.3.0"
+gem "velik-slack", github: "rusnet/velik-slack", ref: "766af27"
+
+gem "json"
+gem "twitter_cldr", "=3.2.1"
+gem "nokogiri"
+gem "mll"
